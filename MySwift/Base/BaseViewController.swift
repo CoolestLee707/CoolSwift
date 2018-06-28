@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseViewController.swift
 //  MySwift
 //
 //  Created by daoj on 2018/5/17.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        view.backgroundColor = .white
+                
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: UIBarPosition.top, barMetrics: UIBarMetrics.default)
+
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

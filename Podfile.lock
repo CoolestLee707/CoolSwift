@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.7.2)
+  - CLImagePickerTool (2.2.8)
+  - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManagerSwift (6.0.1)
+  - Kingfisher (4.7.0)
+  - LTMorphingLabel (0.5.6)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.3)
+  - SnapKit (4.0.0)
+  - SwiftyJSON (4.1.0)
+  - TextFieldEffects (1.4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CLImagePickerTool
+  - FDFullscreenPopGesture
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - LTMorphingLabel
+  - MBProgressHUD
+  - MJRefresh
+  - SnapKit
+  - SwiftyJSON
+  - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CLImagePickerTool: 13a32459afbeec0da2efd32ab9b3f97003375fa7
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManagerSwift: 748d06e0f8134fc28934031e6377da3cf3d4f38c
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  LTMorphingLabel: bdb51d4682e9822da89da6f567bd8aa456fd6650
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
+
+PODFILE CHECKSUM: 15f984cea141078cc05feb6b0d0dfb894076fa04
+
+COCOAPODS: 1.4.0

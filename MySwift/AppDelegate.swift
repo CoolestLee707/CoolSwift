@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,10 +15,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 状态栏设置为白色
+//        application.setStatusBarStyle(.lightContent, animated: true)
+        // 主窗口
+        setUpKeyWindow()
+        
+        // 键盘扩展
+        IQKeyboardManager.shared.enable = true
+        
+        //其他配置
+        AppDelegate.systemConfigration(window: window!)
+
+        
+        #if DEBUG
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+        //for tvOS:
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle")?.load()
+        //Or for macOS:
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
+        #endif
+        
         return true
     }
 
+     fileprivate func setUpKeyWindow()  {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = BaseTabBarViewController()
+        window?.makeKeyAndVisible()
+                
+//        SaveTools.LCM_SaveToLocal(value: "www", key: "rrr")
+//        let isfirst = SaveTools.LCM_getLocalData(key: "isFirstOpen") as! String
+        
+//        LeeLog(message: isfirst)
+        
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
