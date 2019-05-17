@@ -92,7 +92,7 @@ class CLCropViewController: CLBaseImagePickerViewController {
         
         let layer = CAShapeLayer()
         layer.fillColor = UIColor(white: 0, alpha: 0.5).cgColor
-        layer.fillRule = kCAFillRuleEvenOdd
+        layer.fillRule = CAShapeLayerFillRule.evenOdd
         layer.path = path.cgPath
         self.view.layer.addSublayer(layer)
         
@@ -231,13 +231,7 @@ extension CLCropViewController: UIScrollViewDelegate {
         }
 
         let rec = CGRect(x:offset.x/zoom, y:offset.y/zoom,width:width/zoom,height:height/zoom)
-        
-        print(rec)
-        print(self.originalImage?.cgImage ?? "2")
-        print(self.originalImage?.imageOrientation.rawValue ?? "00000")
-//        if self.originalImage?.imageOrientation.rawValue == 3 {
-//            self.originalImage?.cgImage
-//        }
+    
         let imageRef = (self.originalImage?.cgImage!)!.cropping(to: rec)
         
         let image = UIImage.init(cgImage: imageRef!)

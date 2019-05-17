@@ -24,8 +24,14 @@ class CLPickersTools {
     // 配置导航栏文字的颜色
     public var navTitleColor: UIColor? = nil
     // 配置状态栏的颜色
-    public var statusBarType: CLImagePickersToolStatusBarType = .black
+    public var statusBarType: CLImagePickerToolStatusBarType = .black
     
+    public var tineColor = UIColor.init(red: 85/255.0, green: 182/255.0, blue: 55/255.0, alpha: 1) {
+        didSet {
+            mainColor = tineColor
+        }
+    }
+
     fileprivate var dataArr = [[String:[CLImagePickerPhotoModel]]]()
     
     func loadData() -> Array<[String:[CLImagePickerPhotoModel]]>{
@@ -337,7 +343,10 @@ class CLPickersTools {
             // 取出之前的数据
             let dataArr = UserDefaults.standard.value(forKey: CLChooseImageAssetLocalIdentifierKey)
             var arr: Array<String> = dataArr as! Array<String>
-            arr.remove(at: arr.index(of: asset.localIdentifier)!)
+            let i = arr.index(of: asset.localIdentifier)
+            if i != nil {
+                arr.remove(at: i!)
+            }
             UserDefaults.standard.set(arr, forKey: CLChooseImageAssetLocalIdentifierKey)
             UserDefaults.standard.synchronize()
         }
@@ -420,10 +429,10 @@ class CLPickersTools {
             PopViewUtil.alert(title: photoLimitStr, message: clickSetStr, leftTitle: cancelStr, rightTitle: setStr, leftHandler: {
                 
             }, rightHandler: {
-                let url = URL(string: UIApplicationOpenSettingsURLString)
+                let url = URL(string: UIApplication.openSettingsURLString)
                 if let url = url, UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10, *) {
-                        UIApplication.shared.open(url, options: [:],
+                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                                                   completionHandler: {
                                                     (success) in
                         })
@@ -453,10 +462,10 @@ class CLPickersTools {
             PopViewUtil.alert(title: cameraLimitStr, message: clickCameraStr, leftTitle: cancelStr, rightTitle: setStr, leftHandler: {
                 
             }, rightHandler: {
-                let url = URL(string: UIApplicationOpenSettingsURLString)
+                let url = URL(string: UIApplication.openSettingsURLString)
                 if let url = url, UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10, *) {
-                        UIApplication.shared.open(url, options: [:],
+                        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                                                   completionHandler: {
                                                     (success) in
                         })
@@ -484,4 +493,9 @@ class CLPickersTools {
     deinit {
         print("clpickertool释放")
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

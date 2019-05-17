@@ -54,15 +54,16 @@ class LeeMineDetailViewController: BaseViewController {
         
         let footer = (urlStr as NSString).substring(from: 10)   //从第十个字符开始截取
         
-        
+        LeeLog(message: header+middle+footer)
+
 //        “!”代表强制解包。它的意思是从可选值中强行获取对应的非空值,强制解包是危险操作，如果可选值为nil，强制解包系统会奔溃,swift中有规定，对象中的任何属性在创建对象时，都必须有明确的初始化值
         LeeLog(message: x! + x!)
         
 //        let a:Int?
 //        LeeLog(message: a)
         
-        var b:Int?
-        LeeLog(message: b)
+//        let b:Int?
+//        LeeLog(message: b)
         
         
         // Do any additional setup after loading the view.

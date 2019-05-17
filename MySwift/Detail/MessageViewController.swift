@@ -77,7 +77,7 @@ extension MessageViewController {
         mainTableView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(kNavigationBarHeight)
-            make.bottom.equalToSuperview().offset(-BottomBarHeight)
+            make.bottom.equalToSuperview().offset(-BottomEmptyHeight)
         }
 //      系统创建的cell不用注册,xib和自定义cell创建的cell必须注册
         mainTableView.register(LeeHomeCell.classForCoder(), forCellReuseIdentifier: identifier)

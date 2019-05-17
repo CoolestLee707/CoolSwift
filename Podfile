@@ -11,8 +11,6 @@ pod 'SwiftyJSON'        # 处理JSON数据
 pod 'Alamofire'         # 网络请求
 pod 'SnapKit'           # 约束布局
 pod 'CLImagePickerTool'
-pod 'LTMorphingLabel'   #实现动画效果的UILabel
-pod 'TextFieldEffects'  #多效果文本框
 pod 'Kingfisher'        # 图片加载
 pod 'IQKeyboardManagerSwift'    # 键盘扩展
 end

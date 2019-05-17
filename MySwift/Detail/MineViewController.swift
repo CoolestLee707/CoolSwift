@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import LTMorphingLabel
 import CLImagePickerTool
 import Photos
 
 class MineViewController: BaseViewController {
-
-    let imagePickTool = CLImagePickersTool()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +71,6 @@ class MineViewController: BaseViewController {
             make.height.equalTo(40)
         }
         
-        let label:LTMorphingLabel = LTMorphingLabel(frame: CGRect(x: 20, y: 300, width: 100, height: 50))
-        label.font = UIFont.systemFont(ofSize: 30)
-        self.view.addSubview(label)
-        label.morphingEffect = .burn
-        label.text = "Swift"
-        
     }
     
     @objc func tapClick()  {
@@ -103,10 +94,6 @@ class MineViewController: BaseViewController {
         
         LeeLog(message: "相册")
         
-        // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
-        imagePickTool.setupImagePickerWith(MaxImagesCount: 6, superVC: self) { (asset,cutImage) in
-            print("返回的asset数组是\(asset)")
-        }
 
     }
     

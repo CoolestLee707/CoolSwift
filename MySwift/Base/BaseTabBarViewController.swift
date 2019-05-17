@@ -16,6 +16,8 @@ class BaseTabBarViewController: UITabBarController {
         setUpChildViewController()
         
         self.tabBar.tintColor = UIColor.red
+        
+        self.tabBar.isTranslucent = false
     }
     
     override func didReceiveMemoryWarning() {

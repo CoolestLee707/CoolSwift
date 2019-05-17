@@ -33,8 +33,8 @@ class CLSingleTypeCell: UICollectionViewCell {
         super.awakeFromNib()
         
         CLPickersTools.instence.setupBottomViewGradient(superView: self.bottomView)
-        self.bottomView.bringSubview(toFront: self.timerLable) // 防止渐变色同化label
-        self.bottomView.bringSubview(toFront: self.vedioImageView)
+        self.bottomView.bringSubviewToFront(self.timerLable) // 防止渐变色同化label
+        self.bottomView.bringSubviewToFront(self.vedioImageView)
         
         self.iconView.isUserInteractionEnabled = true
                 
@@ -65,13 +65,13 @@ class CLSingleTypeCell: UICollectionViewCell {
             let amplifyView =  CLImageAmplifyView.setupAmplifyViewWithUITapGestureRecognizer(tap: ges, superView: self.contentView,originImageAsset:(self.model?.phAsset)!,isSingleChoose:true,singleModelImageCanEditor:self.singleModelImageCanEditor, isSelect: false)
             amplifyView.singlePictureClickSureBtn = {[weak self] () in
                 if self?.singleChoosePicture != nil {
-                    self?.singleChoosePicture!([(self?.model?.phAsset)!],amplifyView.lastImageView?.image ?? UIImage())
+                    self?.singleChoosePicture!([(self?.model?.phAsset)!],amplifyView.lastImageView.image ?? UIImage())
                 }
             }
             // 编辑图片
             amplifyView.singlePictureClickEditorBtn = { [weak self] () in
                 if self?.singleChoosePictureAndEditor != nil {
-                    self?.singleChoosePictureAndEditor!([(self?.model?.phAsset)!],amplifyView.lastImageView?.image ?? UIImage())
+                    self?.singleChoosePictureAndEditor!([(self?.model?.phAsset)!],amplifyView.lastImageView.image ?? UIImage())
                 }
             }
         }
