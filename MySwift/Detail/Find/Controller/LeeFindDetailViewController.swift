@@ -98,7 +98,8 @@ class LeeFindDetailViewController: BaseViewController {
         default:
             print("其他")
         }
-        
+      
+        //测试git
 //        在swift的switch中，case后面加了fallthrough的用法，就和OC的case后面没加break的用法是一样的！加了fallthrough后，会直接运行【紧跟的后一个】case或default语句，不论条件是否满足都会执行，执行完fallthrough后直接跳到下一个条件语句，本条件执行语句后面的语句不执行
         switch sex {
           
