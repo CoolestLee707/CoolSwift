@@ -44,7 +44,7 @@ class CLPickersTools {
         var flagData: [String:[CLImagePickerPhotoModel]]?
         for i in 0..<self.dataArr.count {
             let dict = self.dataArr[i]
-            if dict.keys.first == allPhoto || dict.keys.first == allPhoto2 || dict.keys.first == allPhoto3 || dict.keys.first == allPhoto4 {
+            if dict.keys.first == allPhoto || dict.keys.first == allPhoto2 || dict.keys.first == allPhoto3 || dict.keys.first == allPhoto4 || dict.keys.first == allPhoto5 {
                 flagData = dict
                 self.dataArr.remove(at: i)
                 break
@@ -73,7 +73,7 @@ class CLPickersTools {
         var flagData: [String:[CLImagePickerPhotoModel]]?
         for i in 0..<self.dataArr.count {
             let dict = self.dataArr[i]
-            if dict.keys.first == allPhoto || dict.keys.first == allPhoto2 || dict.keys.first == allPhoto3 || dict.keys.first == allPhoto4 {
+            if dict.keys.first == allPhoto || dict.keys.first == allPhoto2 || dict.keys.first == allPhoto3 || dict.keys.first == allPhoto4 || dict.keys.first == allPhoto5 {
                 flagData = dict
                 break
             }
@@ -153,7 +153,7 @@ class CLPickersTools {
                         }
                     }
                     // 部分设备打印出来的是中文，所以直接添加就好了
-                    dataArr.append([self.setupTitleStr(assetCollection: assetCollection):array])
+                    dataArr.append([self.setupTitleStr(assetCollection: assetCollection): array])
                 }
             }
         }
@@ -166,7 +166,7 @@ class CLPickersTools {
             title = favStr
         } else if assetCollection.localizedTitle == "Videos" {
             title = videoStr
-        } else if assetCollection.localizedTitle == "All Photos" || assetCollection.localizedTitle == "Camera Roll" {
+        } else if assetCollection.localizedTitle == "All Photos" || assetCollection.localizedTitle == "Camera Roll" || assetCollection.localizedTitle == "最近项目" || assetCollection.localizedTitle == "Recents" {
             title = allPStr
         } else if assetCollection.localizedTitle == "Recently Added" {
             title = rencentStr
@@ -302,6 +302,7 @@ class CLPickersTools {
         //获取原图
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions() //可以设置图像的质量、版本、也会有参数控制图像的裁剪
+        option.isSynchronous = true
         manager.requestImage(for: asset, targetSize:PHImageManagerMaximumSize, contentMode: .aspectFit, options: option) { (originImage, info) in
             dealImageSuccess(originImage,info)
         }
@@ -343,7 +344,7 @@ class CLPickersTools {
             // 取出之前的数据
             let dataArr = UserDefaults.standard.value(forKey: CLChooseImageAssetLocalIdentifierKey)
             var arr: Array<String> = dataArr as! Array<String>
-            let i = arr.index(of: asset.localIdentifier)
+            let i = arr.firstIndex(of: asset.localIdentifier)
             if i != nil {
                 arr.remove(at: i!)
             }

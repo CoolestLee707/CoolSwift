@@ -64,6 +64,7 @@ class CLImagePickersViewController: UINavigationController {
         albumVC.singlePictureCropScale = singlePictureCropScale
         albumVC.onlyChooseImageOrVideo = onlyChooseImageOrVideo
         albumVC.singleModelImageCanEditor = singleModelImageCanEditor
+        albumVC.showCamaroInPicture = showCamaroInPicture
         
         let vc = CLImagePickersViewController.init(rootViewController: albumVC)
         vc.setupOnce(array: dataArr,
@@ -92,7 +93,7 @@ class CLImagePickersViewController: UINavigationController {
         singleVC.navTitle = rowData?.keys.first ?? ""
         singleVC.photoArr = rowData?.values.first
         singleVC.showCamaroInPicture = showCamaroInPicture
-        if singleVC.navTitle == allPhoto || singleVC.navTitle == allPhoto2 || singleVC.navTitle == allPhoto3 || singleVC.navTitle == allPhoto4 {
+        if singleVC.navTitle == allPhoto || singleVC.navTitle == allPhoto2 || singleVC.navTitle == allPhoto3 || singleVC.navTitle == allPhoto4 || singleVC.navTitle == allPhoto5{
             if cameraOut == false {  // 相机不是放在外面
                 singleVC.isAllPhoto = true
             }
@@ -225,7 +226,7 @@ extension CLImageAlbumPickerController:UITableViewDelegate,UITableViewDataSource
         singleVC.navTitle = rowData?.keys.first ?? ""
         singleVC.photoArr = rowData?.values.first
         singleVC.showCamaroInPicture = showCamaroInPicture
-        if singleVC.navTitle == allPhoto || singleVC.navTitle == allPhoto2 || singleVC.navTitle == allPhoto3 || singleVC.navTitle == allPhoto4 {
+        if singleVC.navTitle == allPhoto || singleVC.navTitle == allPhoto2 || singleVC.navTitle == allPhoto3 || singleVC.navTitle == allPhoto4 || singleVC.navTitle == allPhoto5{
             if cameraOut == false {  // 相机不是放在外面
                 singleVC.isAllPhoto = true
             }

@@ -54,6 +54,24 @@
 
 -3.0.3 修复单选情况下设置tineColor，确定按钮的颜色没有改变的问题
 
+-3.0.4 开放PopViewUtils
+
+-3.0.5 适配swift5.0语法
+
+-3.0.6 优化AnotherViewController样式
+
+-3.0.7 dismiss完成后再触发回调函数
+
+-3.0.8 适配pad
+
+-3.0.9 fix 相册中隐藏拍照图片的问题
+
+-3.1.0 适配ios13，修复部分bug
+
+-3.1.1 适配港版手机相册名称问题
+
+-3.1.2 修复拍照线程问题
+
 # 使用方式
 1.由于该库设计的图片较多，类也较多，为了避免和项目中的文件冲突建议使用pod管理，有什么问题和需求可及时提出。
 
@@ -328,3 +346,6 @@ let imagePickTool = CLImagePickerTool()
 ![(logo)](http://images2017.cnblogs.com/blog/818253/201711/818253-20171116114322327-1275157845.png)
 ![(logo)](http://images2017.cnblogs.com/blog/818253/201711/818253-20171116114303577-2033470575.png)
 ![(logo)](https://images2018.cnblogs.com/blog/818253/201711/818253-20171129101532269-1706535987.png)
+
+
+## 如果该框架对您有启发，请帮我点个广告，谢谢 https://www.darrenblog.cn/#/detail/5dbf9a8a7bb725236692b6d4

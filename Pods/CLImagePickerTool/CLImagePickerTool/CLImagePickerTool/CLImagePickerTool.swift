@@ -58,6 +58,8 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
         }
     }
     
+    private let isPad: Bool = UIDevice.current.model == "iPad"
+    
     // 第二种弹出方式
     @available(*, deprecated, message: "Use 'cl_setupImagePickerAnotherWayWith' instead.")
     public func setupImagePickerAnotherWayWith(maxImagesCount: Int,superVC: UIViewController,didChooseImageSuccess:@escaping (Array<PHAsset>,UIImage?)->()) {
@@ -76,6 +78,7 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
                 anotherVC.singleChooseImageCompleteClouse = { (assetArr:Array<PHAsset>,image) in
                     didChooseImageSuccess(assetArr,image)
                 }
+                anotherVC.modalPresentationStyle = .fullScreen
                 superVC.present(anotherVC, animated: true, completion: nil)
             }
         })
@@ -115,7 +118,7 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
 
         if self.cameraOut == true {  // 拍照功能在外面
             var alert: UIAlertController!
-            alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+            alert = UIAlertController(title: nil, message: nil, preferredStyle: isPad ? .alert : .actionSheet)
             let cleanAction = UIAlertAction(title: cancelStr, style: UIAlertAction.Style.cancel,handler:nil)
             let photoAction = UIAlertAction(title: tackPhotoStr, style: UIAlertAction.Style.default){ (action:UIAlertAction)in
                 // 访问相机
@@ -129,6 +132,7 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
             alert.addAction(cleanAction)
             alert.addAction(photoAction)
             alert.addAction(choseAction)
+            alert.modalPresentationStyle = .fullScreen
             superVC.present(alert, animated: true, completion: nil)
 
         } else {
@@ -150,7 +154,7 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
         
         if self.cameraOut == true {  // 拍照功能在外面
             var alert: UIAlertController!
-            alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+            alert = UIAlertController(title: nil, message: nil, preferredStyle: isPad ? .alert : .actionSheet)
             let cleanAction = UIAlertAction(title: cancelStr, style: UIAlertAction.Style.cancel,handler:nil)
             let photoAction = UIAlertAction(title: tackPhotoStr, style: UIAlertAction.Style.default){ (action:UIAlertAction)in
                 // 访问相机
@@ -164,6 +168,8 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
             alert.addAction(cleanAction)
             alert.addAction(photoAction)
             alert.addAction(choseAction)
+            alert.modalPresentationStyle = .fullScreen
+
             self.superVC!.present(alert, animated: true, completion: nil)
             
         } else {
@@ -194,6 +200,7 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
                         self.clPickerToolClouse!(assetArr,cutImage)
                     }
                 }
+                photo.modalPresentationStyle = .fullScreen
                 self.superVC?.present(photo, animated: true, completion: nil)
             }
         })
@@ -209,10 +216,13 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
                     PopViewUtil.alert(message: "相机不可用", leftTitle: "", rightTitle: "确定", leftHandler: nil, rightHandler: nil)
                     return
                 }
-                self.cameraPicker = UIImagePickerController()
-                self.cameraPicker.delegate = self
-                self.cameraPicker.sourceType = .camera
-                superVC.present((self.cameraPicker)!, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.cameraPicker = UIImagePickerController()
+                    self.cameraPicker.delegate = self
+                    self.cameraPicker.sourceType = .camera
+                    self.cameraPicker.modalPresentationStyle = .fullScreen
+                    superVC.present((self.cameraPicker)!, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -231,10 +241,14 @@ public class CLImagePickerTool: NSObject,UIImagePickerControllerDelegate,UINavig
                     PopViewUtil.alert(message: "相机不可用", leftTitle: "", rightTitle: "确定", leftHandler: nil, rightHandler: nil)
                     return
                 }
-                self.cameraPicker = UIImagePickerController()
-                self.cameraPicker.delegate = self
-                self.cameraPicker.sourceType = .camera
-                self.superVC!.present((self.cameraPicker)!, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.cameraPicker = UIImagePickerController()
+                    self.cameraPicker.delegate = self
+                    self.cameraPicker.sourceType = .camera
+                    self.cameraPicker.modalPresentationStyle = .fullScreen
+                    self.superVC!.present((self.cameraPicker)!, animated: true, completion: nil)
+                }
+                
             }
         }
     }
@@ -424,9 +438,11 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             if phasset.mediaType == .video {
                 return
             }
+            print("22222222222222")
             var cameroImage: UIImage?
             CLPickersTools.instence.getAssetOrigin(asset: phasset) { (img, info) in
                 PopViewUtil.share.stopLoading()
+                print("333333333333")
                 if img != nil {
                     cameroImage = img
                     if self.singleImageChooseType == .singlePictureCrop && self.singleModelImageCanEditor != true {  // 单选
