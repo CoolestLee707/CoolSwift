@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 target 'MySwift' do
-source ‘https://github.com/CocoaPods/Specs.git’
+source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
