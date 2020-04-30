@@ -44,13 +44,13 @@ class MessageViewController: BaseViewController {
 
     @objc func refreshData()   {
         LeeLog(message: "刷新")
-        self.mainTableView.mj_header.endRefreshing()
+        self.mainTableView.mj_header!.endRefreshing()
     }
     
     @objc func loadMore()  {
         
         LeeLog(message: "加载更多")
-        self.mainTableView.mj_footer.endRefreshing()
+        self.mainTableView.mj_footer!.endRefreshing()
         
         //提示已经全部加载完毕不再执行loadMore
 //        self.mainTableView.mj_footer.endRefreshingWithNoMoreData()
