@@ -16,7 +16,7 @@ var dataList = ["1","2","3"]
 var shopDic = [
     "ewe":"2121",
     "vfdv":"12344",
-    "klji":"543",
+    "kl8ji":"543",
 ]
 
 

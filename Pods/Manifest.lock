@@ -2,12 +2,12 @@ PODS:
   - Alamofire (4.9.1)
   - CLImagePickerTool (3.1.3)
   - FDFullscreenPopGesture (1.1)
-  - IQKeyboardManagerSwift (6.5.5)
+  - IQKeyboardManagerSwift (6.5.9)
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.4.1)
+  - MJRefresh (3.7.5)
   - SnapKit (4.2.0)
-  - SwiftyJSON (5.0.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -36,13 +36,13 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   CLImagePickerTool: 2ef59c6524efd493571a0ee2bc42f445b4c5b2cb
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
 PODFILE CHECKSUM: d7ee96eee9b8fd0b1d20fffacc2430a13ea74514
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.11.3
