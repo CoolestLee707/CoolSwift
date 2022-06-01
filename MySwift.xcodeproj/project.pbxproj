@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A544C5D2844C972004CBDEC /* LeeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */; };
 		6E6030D56544682DF8282275 /* Pods_MySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBFA1595035C3EEE18D631 /* Pods_MySwift.framework */; };
 		BF00D5C920BE7E8000BFC1EA /* LeeBiBaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00D5C820BE7E8000BFC1EA /* LeeBiBaoViewController.swift */; };
 		BF00D5CB20BE819A00BFC1EA /* LeeHttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00D5CA20BE819A00BFC1EA /* LeeHttpTool.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeTestViewController.swift; sourceTree = "<group>"; };
 		9DFD21F96C90901520D2C4AA /* Pods-MySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwift/Pods-MySwift.release.xcconfig"; sourceTree = "<group>"; };
 		9F80AC2DC91DBFE1C96620F5 /* Pods-MySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwift/Pods-MySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		A0BBFA1595035C3EEE18D631 /* Pods_MySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				BF00D5CE20BEAD0900BFC1EA /* LeeEnumViewController.swift */,
 				BF00D5D020BFA27800BFC1EA /* LeeFanxingViewController.swift */,
 				BF00D5D220BFED9E00BFC1EA /* LeeDelegateViewController.swift */,
+				4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				BFA726E720AD87CC0028E627 /* MessageViewController.swift in Sources */,
 				BFA7270020AEAED10028E627 /* ThirdDefine.swift in Sources */,
 				BF578FF420BD6451009A6092 /* LeeFirstView.swift in Sources */,
+				4A544C5D2844C972004CBDEC /* LeeTestViewController.swift in Sources */,
 				BF4199A420D11E4700385313 /* LeeInjection.m in Sources */,
 				BF69AC8420B1956700427B1B /* UIView+Utils.swift in Sources */,
 				BF69AC9020B5660500427B1B /* MBProgressHUD+Extension.swift in Sources */,
