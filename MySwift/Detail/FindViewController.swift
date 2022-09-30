@@ -19,7 +19,7 @@ class FindViewController: BaseViewController,UITableViewDelegate,UITableViewData
     lazy var mainTableView : UITableView = UITableView()
     let identifier : String = "identifier"
 
-    let myData = NSMutableArray(objects: "数组","字典","集合","基本函数","函数与元祖","函数调用","类","闭包","懒加载","枚举","泛型","代理","13")
+    let myData = NSMutableArray(objects: "数组","字典","集合","基本函数","函数与元祖","函数调用","类","闭包","懒加载","枚举","泛型","代理","单例")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +121,9 @@ class FindViewController: BaseViewController,UITableViewDelegate,UITableViewData
             self.navigationController?.pushViewController(vc, animated: true)
         case 11:
             let vc = LeeDelegateViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case 12:
+            let vc = LeeSingleonViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             LeeLog(message: "。。。")

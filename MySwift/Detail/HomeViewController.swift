@@ -19,6 +19,17 @@ var shopDic = [
     "kl8ji":"543",
 ]
 
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust()
+}
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+        return "The number \(self)"
+    }
+    mutating func adjust() {
+self += 42 }
+}
 
 class HomeViewController: BaseViewController {
 
@@ -31,14 +42,35 @@ class HomeViewController: BaseViewController {
         shopDic["000"] = "popgfp"
         
         setSubViews()
+        
+//     print(teststr("2020-05-16 19:20:34|user.login|name=Charles&location=Beijing&device=iPhone"))
      
     }
 
+    func teststr(_ str:String) -> Dictionary<String, String> {
+        
+        let str = str
+        let arr:[String] = str.components(separatedBy: "|")
+        let tempStr:String = arr.last ?? ""
+        let arr1:[String] = tempStr.components(separatedBy: "&")
+        
+        var result = Dictionary<String,String>()
+        for valueStr:String in arr1 {
+            let arr2:[String] = valueStr.components(separatedBy: "=")
+            let keyStr:String = arr2.first ?? " "
+            let valueStr:String = arr2.last ?? " "
+            if keyStr.count > 0 {
+                result[keyStr] = valueStr
+            }
+        }
+        return result
+    }
+    
+    
     func setSubViews()  {
     
         let backview = UIView()
         backview.backgroundColor = UIColor.red
-        backview.lcm_makeRound()
 
         self.view.addSubview(backview)
         
@@ -47,8 +79,19 @@ class HomeViewController: BaseViewController {
             make.top.equalToSuperview().offset(20 + kNavigationBarHeight)
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-10-BottomBarHeight)
-
         }
+        backview.lcm_makeRadius(radius: 20)
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(jumpDetail))
+        
+        backview.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func jumpDetail() {
+                
+        let homeDetail:Home_DetailViewController = Home_DetailViewController()
+        self.navigationController?.pushViewController(homeDetail, animated: true)
         
     }
     
@@ -69,3 +112,4 @@ class HomeViewController: BaseViewController {
     */
 
 }
+

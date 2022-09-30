@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A21DF5828DF10D2000E8CD6 /* Home_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21DF5728DF10D2000E8CD6 /* Home_DetailViewController.swift */; };
 		4A544C5D2844C972004CBDEC /* LeeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */; };
+		4A544C71284CA199004CBDEC /* LeeSingleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C70284CA199004CBDEC /* LeeSingleon.swift */; };
+		4A544C73284CA3CC004CBDEC /* LeeSingleonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C72284CA3CC004CBDEC /* LeeSingleonViewController.swift */; };
 		6E6030D56544682DF8282275 /* Pods_MySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBFA1595035C3EEE18D631 /* Pods_MySwift.framework */; };
 		BF00D5C920BE7E8000BFC1EA /* LeeBiBaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00D5C820BE7E8000BFC1EA /* LeeBiBaoViewController.swift */; };
 		BF00D5CB20BE819A00BFC1EA /* LeeHttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00D5CA20BE819A00BFC1EA /* LeeHttpTool.swift */; };
@@ -68,7 +71,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A21DF5728DF10D2000E8CD6 /* Home_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_DetailViewController.swift; sourceTree = "<group>"; };
 		4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeTestViewController.swift; sourceTree = "<group>"; };
+		4A544C70284CA199004CBDEC /* LeeSingleon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeSingleon.swift; sourceTree = "<group>"; };
+		4A544C72284CA3CC004CBDEC /* LeeSingleonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeSingleonViewController.swift; sourceTree = "<group>"; };
 		9DFD21F96C90901520D2C4AA /* Pods-MySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwift/Pods-MySwift.release.xcconfig"; sourceTree = "<group>"; };
 		9F80AC2DC91DBFE1C96620F5 /* Pods-MySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwift/Pods-MySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		A0BBFA1595035C3EEE18D631 /* Pods_MySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +161,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A21DF5428DF108B000E8CD6 /* Homes */ = {
+			isa = PBXGroup;
+			children = (
+				4A21DF5628DF10BB000E8CD6 /* Controller */,
+				4A21DF5528DF109C000E8CD6 /* View */,
+			);
+			path = Homes;
+			sourceTree = "<group>";
+		};
+		4A21DF5528DF109C000E8CD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A21DF5628DF10BB000E8CD6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A21DF5728DF10D2000E8CD6 /* Home_DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		72B9852A65E4F1D9F6746E74 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +251,7 @@
 				BF00D5D020BFA27800BFC1EA /* LeeFanxingViewController.swift */,
 				BF00D5D220BFED9E00BFC1EA /* LeeDelegateViewController.swift */,
 				4A544C5C2844C972004CBDEC /* LeeTestViewController.swift */,
+				4A544C72284CA3CC004CBDEC /* LeeSingleonViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,37 +298,6 @@
 			sourceTree = "<group>";
 		};
 		BF578FE420BCF13C009A6092 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BF578FE520BCF144009A6092 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				BF578FE620BCF144009A6092 /* Controller */,
-				BF578FE720BCF144009A6092 /* Model */,
-				BF578FE820BCF144009A6092 /* View */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		BF578FE620BCF144009A6092 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		BF578FE720BCF144009A6092 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BF578FE820BCF144009A6092 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -375,7 +375,7 @@
 		BFA726E120AD873C0028E627 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				BF578FE520BCF144009A6092 /* Home */,
+				4A21DF5428DF108B000E8CD6 /* Homes */,
 				BF578FE120BCF13C009A6092 /* Message */,
 				BF578FDD20BCF12D009A6092 /* Find */,
 				BF578FD920BCF122009A6092 /* Mine */,
@@ -412,6 +412,7 @@
 			children = (
 				BF69AC8D20B2E08300427B1B /* SaveTools.swift */,
 				BF00D5CA20BE819A00BFC1EA /* LeeHttpTool.swift */,
+				4A544C70284CA199004CBDEC /* LeeSingleon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -625,14 +626,17 @@
 				BF69AC8E20B2E08300427B1B /* SaveTools.swift in Sources */,
 				BF578FF220BD6118009A6092 /* LeeFunctionViewController.swift in Sources */,
 				BF69AC8C20B2D53200427B1B /* NSObject+Extension.swift in Sources */,
+				4A544C73284CA3CC004CBDEC /* LeeSingleonViewController.swift in Sources */,
 				BF00D5D320BFED9E00BFC1EA /* LeeDelegateViewController.swift in Sources */,
 				BFA726EB20AD87E20028E627 /* MineViewController.swift in Sources */,
 				BFA726FC20AEA9E20028E627 /* LeeHomeCell.swift in Sources */,
 				BF00D5CF20BEAD0900BFC1EA /* LeeEnumViewController.swift in Sources */,
 				BF00D5C920BE7E8000BFC1EA /* LeeBiBaoViewController.swift in Sources */,
 				BFA726B120AD80BC0028E627 /* AppDelegate.swift in Sources */,
+				4A21DF5828DF10D2000E8CD6 /* Home_DetailViewController.swift in Sources */,
 				BFA726E720AD87CC0028E627 /* MessageViewController.swift in Sources */,
 				BFA7270020AEAED10028E627 /* ThirdDefine.swift in Sources */,
+				4A544C71284CA199004CBDEC /* LeeSingleon.swift in Sources */,
 				BF578FF420BD6451009A6092 /* LeeFirstView.swift in Sources */,
 				4A544C5D2844C972004CBDEC /* LeeTestViewController.swift in Sources */,
 				BF4199A420D11E4700385313 /* LeeInjection.m in Sources */,

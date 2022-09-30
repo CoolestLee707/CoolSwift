@@ -46,7 +46,7 @@ class LeeMineDetailViewController: BaseViewController {
             make.height.equalTo(20)
         }
         
-        
+    
         let urlStr = "www.baidu.com"
         let header = (urlStr as NSString).substring(to: 3)  //截取前三位
         

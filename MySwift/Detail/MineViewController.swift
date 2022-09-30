@@ -8,6 +8,7 @@
 
 import UIKit
 import CLImagePickerTool
+import MBProgressHUD
 import Photos
 
 class MineViewController: BaseViewController {
@@ -94,6 +95,14 @@ class MineViewController: BaseViewController {
         
         LeeLog(message: "相册")
         
+//        MBProgressHUD.show()
+        MBProgressHUD.showSuccess("success")
+        
+        var a = 1
+        var b = 2
+        if a == b {
+            
+        }
 
     }
     

@@ -16,6 +16,7 @@ class SaveTools: NSObject {
         
         UserDefaults.standard.set(value, forKey: key!)
         UserDefaults.standard.synchronize()
+
     }
     
     // 读取

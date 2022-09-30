@@ -163,16 +163,41 @@ class LeeFindDetailViewController: BaseViewController {
             LeeLog(message: i)
         }
     }
+ 
+
+//    已知有很多会议,如果这些会议时间相互重叠,则将他们合并。
     
-   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    func mergeMeetings(_ meetings: [[Int]]) -> [[Int]] {
+//
+//        guard meetings.count > 1 else {
+//            return meetings
+    
+//        }
+//
+//        var times = meetings.sorted { (num1:Int,num2:Int) -> Bool in
+//
+//            if num1.start != num2.start {
+//                return num1.start < num2.start
+//            }else{
+//                return num1.end < num2.end
+//            }
+//        }
+//        var res = [[Int]]()
+//        res.append(times[0])
+//
+//        for i in 1..<times.count {
+//            let temp = res[res.count - 1]
+//            let current = times[i]
+//            if current.start > temp.end {
+//                res.append(current)
+//            }else {
+//                temp.end = max(temp.end , current.end)
+//            }
+//        }
+//        return res
+//    }
+    
 }
+
+
+

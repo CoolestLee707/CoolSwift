@@ -50,7 +50,7 @@ extension MBProgressHUD {
         let view = viewToShow()
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .customView //模式设置为自定义视图
-        hud.customView = UIImageView(image: UIImage(named: "tick")!) //自定义视图显示图片
+        hud.customView = UIImageView(image: UIImage(named: "Tabbar_Find")!) //自定义视图显示图片
         hud.label.text = title
         hud.removeFromSuperViewOnHide = true
         //HUD窗口显示1秒后自动隐藏
